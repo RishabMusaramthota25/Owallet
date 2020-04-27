@@ -35,23 +35,6 @@ public class OnlineDaoImp implements OnlineDao {
 		
 	}
 
-	@Override
-	public Online deposite(Long accNo, Double depositeAmount) {
-		
-		
-		
-		Online bank= brepo.findByAccNo(accNo);
-		Double currentBal= bank.getBalance();
-		Transaction tran=new Transaction();
-		tran.setTransactionId((long)(Math.random()*1000));
-		tran.setCreditedAmount(depositeAmount);
-		tran.setDebitedAmount((double)0);
-		tran.setBalance(currentBal+depositeAmount);
-		tran.setAccNo(accNo);
-		trepo.save(tran);
-		bank.setBalance(currentBal+depositeAmount);
-		return brepo.save(bank);
-	}
 
 	@Override
 	public Online getAccount(Long accNo) 
@@ -61,39 +44,10 @@ public class OnlineDaoImp implements OnlineDao {
 	}
 
 	
-	@Override
-	public Online withdraw(Long accNo, Double withdrawAmount) {
 
-		Online bank = brepo.findByAccNo(accNo);
-		Transaction tran = new Transaction();
-		tran.setTransactionId((long)(Math.random()*1000));
-		tran.setAccNo(accNo);
-		tran.setDebitedAmount(withdrawAmount);
-		tran.setCreditedAmount((double)0);
-		Double currentBal = bank.getBalance();
-		tran.setBalance(currentBal-withdrawAmount);
-		bank.setBalance(currentBal-withdrawAmount);
-		trepo.save(tran);
-		return brepo.save(bank);
-	}
 
 	
 	
-	  @Override public List<Transaction> printTransactions(Long accNo) 
-	  {
-		  
-	  return trepo.findAllByAccNo(accNo);
-	  }
-	 
-
-	@Override
-	public Online fundTransfer(Long saccNo, Long raccNo, Double transferAmount) {
-		
-		Online sBank=withdraw(saccNo, transferAmount);
-		deposite(raccNo, transferAmount);
-		
-		return sBank;
-	}
 
 	
 }

@@ -36,11 +36,11 @@ public class OnlineController {
 	}
 	
 	
-	@GetMapping(path="/deposite/{accNo}&{depositeAmount}")
-	public Online deposite(@PathVariable Long accNo,@PathVariable Double depositeAmount)
-	{
-		return service.deposite(accNo,depositeAmount);
-	}
+	/*
+	 * @GetMapping(path="/deposite/{accNo}&{depositeAmount}") public Online
+	 * deposite(@PathVariable Long accNo,@PathVariable Double depositeAmount) {
+	 * return service.deposite(accNo,depositeAmount); }
+	 */
 	
 	
 	
@@ -53,22 +53,22 @@ public class OnlineController {
 	
 	
 	
-	@GetMapping(path="/withdraw/{accNo}&{withdrawAmount}")
-	public Online withdraw(@PathVariable Long accNo,@PathVariable Double withdrawAmount)
-	{
-		return service.withdraw(accNo,withdrawAmount);
-	}
-	
-	
-	
-	  @GetMapping(path="/print/{accNo}") public List<Transaction>
-	  printTransactions(@PathVariable Long accNo) { return
-	  service.printTransactions(accNo); }
-	 
-	
-	
-	@GetMapping(path="/fund/{saccNo}&{raccNo}&{transferAmount}")
-	public Online fundTranfer(@PathVariable Long saccNo,@PathVariable Long raccNo,@PathVariable Double transferAmount) {
-		return service.fundTransfer(saccNo,raccNo,transferAmount);
-	}
+	/*
+	 * @GetMapping(path="/withdraw/{accNo}&{withdrawAmount}") public Online
+	 * withdraw(@PathVariable Long accNo,@PathVariable Double withdrawAmount) {
+	 * return service.withdraw(accNo,withdrawAmount); }
+	 * 
+	 * 
+	 * 
+	 * @GetMapping(path="/print/{accNo}") public List<Transaction>
+	 * printTransactions(@PathVariable Long accNo) { return
+	 * service.printTransactions(accNo); }
+	 * 
+	 * 
+	 * 
+	 * @GetMapping(path="/fund/{saccNo}&{raccNo}&{transferAmount}") public Online
+	 * fundTranfer(@PathVariable Long saccNo,@PathVariable Long raccNo,@PathVariable
+	 * Double transferAmount) { return
+	 * service.fundTransfer(saccNo,raccNo,transferAmount); }
+	 */
 }

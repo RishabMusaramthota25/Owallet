@@ -27,12 +27,7 @@ public class OnlineServiceImp implements OnlineService{
 		return dao.showBalance(accNo);
 	}
 
-	@Override
-	public Online deposite(Long accNo, Double depositeAmount) 
-	{
-		
-		return dao.deposite(accNo,depositeAmount);
-	}
+	
 
 	@Override
 	public Online getAccount(Long accNo)
@@ -42,29 +37,7 @@ public class OnlineServiceImp implements OnlineService{
 	}
 	
 
-	@Override
-	public Online withdraw(Long accNo, Double withdrawAmount) 
-	{
-	
-		return dao.withdraw(accNo,withdrawAmount);
-	}
 
-	
-	@Override
-	public List<Transaction> printTransactions(Long accNo) 
-	{
-		
-		return dao.printTransactions(accNo);
-	}
-	
-
-	@Override
-	public Online fundTransfer(Long saccNo, Long raccNo, Double transferAmount)
-	
-	{
-	
-		return dao.fundTransfer(saccNo,raccNo,transferAmount);
-	}
 
 	
 }
