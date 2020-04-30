@@ -22,11 +22,8 @@ public class OnlineDaoImp implements OnlineDao {
 		  tran.setCreditedAmount(bank.getBalance());
 		  tran.setTransactionId((long)(Math.random()*1000));
 		  tran.setDebitedAmount((double) 0); tran.setAccNo(bank.getAccNo()); trepo.save(tran);
-		 
-		 
 		return brepo.save(bank);
 	}
-
 	@Override
 	public Online showBalance(Long accNo)
 	{
@@ -35,7 +32,7 @@ public class OnlineDaoImp implements OnlineDao {
 		
 	}
 
-
+System.out.println("Hey");
 	@Override
 	public Online getAccount(Long accNo) 
 	{
